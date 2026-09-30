@@ -1,0 +1,12 @@
+NVCC = nvcc
+TARGET = batch_image_processing
+CXXFLAGS = -O2 -std=c++17
+
+all:
+	$(NVCC) $(CXXFLAGS) src/batch_image_processing.cu -o $(TARGET)
+
+clean:
+	rm -f $(TARGET)
+
+run:
+	./$(TARGET) data/input data/output 100
